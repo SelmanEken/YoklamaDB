@@ -52,6 +52,7 @@ CREATE TABLE ogrenciyoklama (
 );
 
 
+
 select count(*) from kullanici
 select count(*) from ogrenci
 select count(*) from ders
