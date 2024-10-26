@@ -1,3 +1,12 @@
+
+create view vw_KullaniciBilgileri
+as
+select KullaniciID,KullaniciAd,KullaniciSoyad,Email,KullaniciAdi,parola
+from kullanici
+
+select * from vw_KullaniciBilgileri
+
+
 CREATE VIEW vw_OgrenciYoklamaToplam
 AS
 SELECT 
