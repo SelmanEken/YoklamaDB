@@ -31,3 +31,28 @@ EXEC GetYoklamaByTarihAraligi '2024-01-01', '2024-12-31';
 SELECT COUNT(*) AS ToplamYoklamaSayisi
 FROM ogrenciyoklama
 WHERE Tarih BETWEEN '2024-01-01' AND '2024-12-31';
+
+
+
+CREATE FUNCTION dbo.fn_YoklamaSayisi
+(
+    @OgrenciNo INT,
+    @DersID INT
+)
+RETURNS INT
+AS
+BEGIN
+    DECLARE @YoklamaSayisi INT;
+
+    SELECT @YoklamaSayisi = COUNT(*)
+    FROM ogrenciyoklama
+    WHERE OgrenciNo = @OgrenciNo AND DersID = @DersID;
+
+    RETURN @YoklamaSayisi;
+END;
+
+
+SELECT dbo.fn_YoklamaSayisi(44, 1);  
+
+select * from ogrenciyoklama 
+where OgrenciNo = 44
