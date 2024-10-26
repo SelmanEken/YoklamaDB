@@ -51,3 +51,10 @@ CREATE TABLE ogrenciyoklama (
     FOREIGN KEY (DersID) REFERENCES ders(DersID)
 );
 
+
+select count(*) from kullanici
+select count(*) from ogrenci
+select count(*) from ders
+select count(*) from kullaniciders
+select count(*) from ogrenciders
+select count(*) from ogrenciyoklama
